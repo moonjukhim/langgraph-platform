@@ -2,10 +2,17 @@ import asyncio
 from langgraph_sdk import get_client
 from langchain_core.messages import BaseMessage, ToolMessage, HumanMessage
 
+from dotenv import load_dotenv
+load_dotenv()
+
 async def invoke_retrieval_assistant():
     # Initialize the LangGraph client
     # Replace <DEPLOYMENT_URL> with your actual LangGraph deployment URL
+    
+    # deployment_url = "[PROJECT_ID].us.langgraph.app"
     deployment_url = "http://localhost:2024"
+    
+    
     client = get_client(url=deployment_url)
 
     try:
