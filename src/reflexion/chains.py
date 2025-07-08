@@ -31,7 +31,7 @@ actor_prompt_template = ChatPromptTemplate.from_messages(
 
 
 first_responder = actor_prompt_template.partial(
-    first_instruction="250자 내로 자세한 답변을 하세요."
+    first_instruction="250자 단어 내로 자세한 답변을 하세요."
 ) | llm.bind_tools(tools=[AnswerQuestion], tool_choice="AnswerQuestion")
 validator = PydanticToolsParser(tools=[AnswerQuestion])
 
