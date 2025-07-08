@@ -7,8 +7,6 @@ from langchain_core.messages import BaseMessage, ToolMessage
 from langgraph.graph import END, MessageGraph
 from src.reflexion.chains import first_responder, revisor
 from src.reflexion.tool_executor import tool_node
-# from chains import first_responder, revisor
-# from tool_executor import tool_node
 from typing import TypedDict, List, Annotated
 from langchain_core.messages import BaseMessage
 from langgraph.graph.message import add_messages  # ✅ 병합 함수
@@ -31,12 +29,9 @@ def event_loop(state: List[BaseMessage]) -> str:
     if num_iterations > MAX_ITERATIONS:
         return END
     return "execute_tools"
-#def event_loop(state: AgentState) -> str:
-#    count = sum(msg.type == "tool" for msg in state["messages"])
-#    return END if count > MAX_ITERATIONS else "execute_tools"
 
 
 builder.add_conditional_edges("revise", event_loop)
 builder.set_entry_point("draft")
 graph = builder.compile()
-graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
+#graph.get_graph().draw_mermaid_png(output_file_path="graph.png")
