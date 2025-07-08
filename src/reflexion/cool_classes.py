@@ -11,7 +11,7 @@ class Reflection(BaseModel):
 class AnswerQuestion(BaseModel):
     """Answer the question."""
 
-    answer: str = Field(description="질문에 대한 답변은 250자 내로 작성")
+    answer: str = Field(description="질문에 대한 답변은 250개의 단어 내로 작성")
     reflection: Reflection = Field(description="첫 번째 답변에 대한 평가")
     search_queries: List[str] = Field(
         description="현재 답변에 대한 비판을 해결하기 위한 개선 사항을 조사하기 위한 1~3개의 검색어"
