@@ -27,7 +27,7 @@ async def invoke_retrieval_assistant():
 
         # Prepare the input for the retrieval graph
         input_messages = [
-            {"role": "user", "content": "What is this document about?"}
+            {"role": "user", "content": "NPU에 대한 고충 영역을 식별하고 이를 해결하기 위해 자본 투자를 유치한 스타트업 목록을 나열하세요."}
         ]
         
         assistant_id = "agent"
